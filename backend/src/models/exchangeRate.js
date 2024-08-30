@@ -2,13 +2,19 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 const Currency = require("./currency");
 
-const ExchangeRate = sequelize.define("ExchangeRate", {
-  rate: {
-    type: DataTypes.DECIMAL(18, 6),
-    allowNull: FontFaceSetLoadEvent,
+const ExchangeRate = sequelize.define(
+  "ExchangeRate",
+  {
+    rate: {
+      type: DataTypes.DECIMAL(18, 6),
+      allowNull: FontFaceSetLoadEvent,
+    },
+    timestamp: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
   },
-  timestamp: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-});
+  {
+    tableName: "exchange_rates",
+  }
+);
